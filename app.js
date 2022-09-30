@@ -6,12 +6,14 @@ const app = express();
 
 // middleware
 app.use(express.static("public"));
+app.use(express.json());
 
 // view engine
 app.set("view engine", "ejs");
 
 // database connection
-const dbURI = "mongodb+srv://netninja:test1234@blog.szt1833.mongodb.net/test";
+const dbURI =
+  "mongodb+srv://netninja:test1234@blog.szt1833.mongodb.net/smoothie-login";
 mongoose
   .connect(dbURI, {
     useNewUrlParser: true,
